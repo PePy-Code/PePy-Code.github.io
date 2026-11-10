@@ -17,7 +17,7 @@ python -m http.server 8000
 ```
 
 ## Extras
-- `tools/ioc/` — IOC Extractor (100% client-side). Tests: `node tools/ioc/test.mjs`
+- IOC Extractor: vive en su propio repo → https://github.com/PePy-Code/ioc-extractor
 - Modo simple (botón en la barra): quita efectos; se guarda en `localStorage`.
 - Paleta de comandos: `Ctrl+K` o `/`.
 - Versión imprimible: imprimir la página genera un resumen en blanco y negro.
