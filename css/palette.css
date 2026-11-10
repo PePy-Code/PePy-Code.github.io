@@ -1,0 +1,205 @@
+/* Command palette — monochrome, dependency-free, scoped under #pepy-palette. */
+
+#pepy-palette {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(12px, 9vh, 96px) 12px 12px;
+  background: rgba(0, 0, 0, 0.72);
+  color: var(--text, #d4d4d4);
+  font-family: var(--mono, "JetBrains Mono", ui-monospace, monospace);
+  -webkit-font-smoothing: antialiased;
+}
+
+#pepy-palette[hidden] {
+  display: none;
+}
+
+#pepy-palette .palette__dialog {
+  width: min(640px, 100%);
+  max-height: min(70vh, 560px);
+  display: flex;
+  flex-direction: column;
+  background: var(--card, #0d0d0d);
+  border: 1px solid var(--line-2, #3a3a3a);
+  box-shadow:
+    0 0 0 1px #000,
+    0 24px 80px rgba(0, 0, 0, 0.9);
+  outline: none;
+  animation: palette-in 0.12s ease-out;
+}
+
+#pepy-palette .palette__bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line, #262626);
+}
+
+#pepy-palette .palette__prompt {
+  color: var(--white, #f5f5f5);
+  font-weight: 700;
+  text-shadow: var(--glow, none);
+}
+
+#pepy-palette .palette__input {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: var(--white, #f5f5f5);
+  font: inherit;
+  font-size: 15px;
+  caret-color: var(--white, #f5f5f5);
+}
+
+#pepy-palette .palette__input::placeholder {
+  color: var(--dim, #7a7a7a);
+  opacity: 1;
+}
+
+#pepy-palette .palette__close {
+  flex: 0 0 auto;
+  padding: 2px 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--dim, #7a7a7a);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+#pepy-palette .palette__close:hover,
+#pepy-palette .palette__close:focus-visible {
+  border-color: var(--white, #f5f5f5);
+  background: var(--white, #f5f5f5);
+  color: #000;
+}
+
+#pepy-palette .palette__close:focus-visible {
+  outline: 1px dashed var(--white, #f5f5f5);
+  outline-offset: 3px;
+}
+
+#pepy-palette .palette__list {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 0;
+  padding: 6px 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  list-style: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-2, #3a3a3a) transparent;
+}
+
+#pepy-palette .palette__list::-webkit-scrollbar {
+  width: 8px;
+}
+
+#pepy-palette .palette__list::-webkit-scrollbar-thumb {
+  background: var(--line-2, #3a3a3a);
+}
+
+#pepy-palette .palette__option {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 14px;
+  border-left: 2px solid transparent;
+  color: var(--text, #d4d4d4);
+  cursor: pointer;
+}
+
+#pepy-palette .palette__option[aria-selected="true"] {
+  background: var(--white, #f5f5f5);
+  color: #000;
+}
+
+#pepy-palette .palette__name {
+  min-width: 0;
+  overflow: hidden;
+  color: var(--white, #f5f5f5);
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#pepy-palette .palette__option[aria-selected="true"] .palette__name {
+  color: #000;
+}
+
+#pepy-palette .palette__hint {
+  min-width: 0;
+  max-width: 55%;
+  overflow: hidden;
+  color: var(--dim, #7a7a7a);
+  font-size: 12px;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#pepy-palette .palette__option[aria-selected="true"] .palette__hint {
+  color: #333;
+}
+
+#pepy-palette .palette__empty {
+  padding: 14px;
+  color: var(--dim, #7a7a7a);
+  font-size: 13px;
+}
+
+#pepy-palette .palette__foot {
+  display: flex;
+  gap: 14px;
+  padding: 6px 14px;
+  border-top: 1px solid var(--line, #262626);
+  color: var(--dim, #7a7a7a);
+  font-size: 11px;
+}
+
+@keyframes palette-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  #pepy-palette {
+    padding-top: 8vh;
+  }
+
+  #pepy-palette .palette__dialog {
+    max-height: 80vh;
+  }
+
+  #pepy-palette .palette__hint {
+    display: none;
+  }
+
+  #pepy-palette .palette__foot {
+    gap: 10px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #pepy-palette,
+  #pepy-palette * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

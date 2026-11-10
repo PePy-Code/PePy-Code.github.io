@@ -1,0 +1,61 @@
+/* Background FX + scroll reveal — monochrome, dependency-free.
+   Loaded after css/style.css. Nothing here is required for content to be
+   visible: reveal rules only apply once js/fx.js adds html.fx. */
+
+/* Digital-rain canvas. Negative z-index paints it above the page background
+   but below all in-flow content, so it never covers or blocks clicks. */
+#fx-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+/* Scroll reveal: hidden only when JS has confirmed it is running (html.fx).
+   The transition lives on .fx-in so the initial hide is instant (no flash
+   of visible content fading out) and only the reveal animates. */
+html.fx .fx-reveal {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+html.fx .fx-reveal.fx-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 0.5s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+/* Reduced motion: no canvas, no reveal — everything visible immediately. */
+@media (prefers-reduced-motion: reduce) {
+  #fx-canvas {
+    display: none !important;
+  }
+
+  html.fx .fx-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+}
+
+/* Never hide content when printing. */
+@media print {
+  #fx-canvas {
+    display: none !important;
+  }
+
+  html.fx .fx-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

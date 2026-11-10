@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saúl Bastidas · Portafolio</title>
+  <meta name="description" content="Portafolio de Saúl Bastidas (PePy): estudiante de Ingeniería en Sistemas Computacionales en la UDLAP, enfocado en ciberseguridad (con interés en blue team), CTFs y programación.">
+  <meta property="og:title" content="Saúl Bastidas · Portafolio">
+  <meta property="og:description" content="Ciberseguridad, CTFs y desarrollo web. HackTheBox, proyectos y certificaciones.">
+  <meta property="og:image" content="https://pepy-code.github.io/assets/img/avatar.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" href="assets/img/avatar.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/boot.css">
+  <link rel="stylesheet" href="css/palette.css">
+  <link rel="stylesheet" href="css/statusbar.css">
+  <link rel="stylesheet" href="css/fx.css">
+</head>
+<body>
+  <a class="skip" href="#main" data-i18n="skip">Saltar al contenido</a>
+
+  <header class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top">~/pepy<span class="cursor" aria-hidden="true">█</span></a>
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-links" class="nav__links">
+        <a href="#about">./about</a>
+        <a href="#experience">./exp</a>
+        <a href="#htb">./htb</a>
+        <a href="#projects">./projects</a>
+        <a href="#certs">./certs</a>
+        <a href="#skills">./skills</a>
+        <a href="#contact">./contact</a>
+        <button class="lang" id="plain-toggle" aria-pressed="false" title="Modo simple: sin efectos / Plain mode: no effects" data-i18n="plain.btn">modo simple</button>
+        <button class="lang" id="lang-toggle" aria-label="Cambiar idioma / Switch language">EN</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero__grid">
+        <div>
+          <p class="prompt"><span class="dim">saul@archlinux</span> <span class="ps">~ $</span> whoami</p>
+          <h1 class="glitch" data-text="Saúl Bastidas">Saúl Bastidas</h1>
+          <p class="hero__role">&gt; <span id="typed" data-i18n="hero.role">Estudiante de ISC · Ciberseguridad · Blue Team · Programación</span><span class="cursor" aria-hidden="true">█</span></p>
+          <p class="hero__lead" data-i18n="hero.lead">Me gusta entender cómo funcionan los sistemas para saber cómo atacarlos y, sobre todo, cómo defenderlos. Resuelvo máquinas en HackTheBox, compito en CTFs con mi equipo y construyo software en mis ratos libres.</p>
+          <p class="print-only">SaulBastidas064@outlook.com · linkedin.com/in/saul-bastidas · github.com/PePy-Code · pepy-code.github.io</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#projects" data-i18n="hero.cta1">[ ver proyectos ]</a>
+            <a class="btn" href="https://github.com/PePy-Code" target="_blank" rel="noopener">[ github ]</a>
+            <a class="btn" href="#contact" data-i18n="hero.cta3">[ contacto ]</a>
+          </div>
+        </div>
+
+        <div class="term" aria-label="Resumen estilo neofetch">
+          <div class="term__bar"><i></i><i></i><i></i><span>pepy@htb: ~ — neofetch</span></div>
+          <div class="term__body neofetch">
+<pre class="neofetch__logo" aria-hidden="true">
+   /\_/\
+  ( o.o )
+   > ^ <
+  /|   |\
+ (_|   |_)</pre>
+<pre class="neofetch__info"><b>pepy</b>@<b>htb</b>
+<span class="dim">-----------</span>
+<b>OS</b>      Arch Linux
+<b>WM</b>      Hyprland
+<b>Shell</b>   zsh
+<b>Uni</b>     UDLAP · ISC
+<b>HTB</b>     lvl 31 · Skilled
+<b>Pwned</b>   12 machines
+<b>CTF</b>     #52 / 1014
+<b>Team</b>    Hackztecs
+<span class="swatch"><i></i><i></i><i></i><i></i><i></i><i></i></span></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <h2 class="section__title"><span class="ps">$</span> cat about.md <span class="comment"># <span data-i18n="nav.about">sobre mí</span></span></h2>
+        <div class="about">
+          <img class="about__avatar" src="assets/img/avatar.jpg" alt="Avatar de PePy" width="180" height="180">
+          <div>
+            <p data-i18n="about.p1">Soy estudiante de tercer semestre de <strong>Ingeniería en Sistemas Computacionales</strong> en la <strong>Universidad de las Américas Puebla (UDLAP)</strong>, con una <strong>beca del 45% por excelencia académica</strong>. Soy de Mazatlán, Sinaloa.</p>
+            <p data-i18n="about.p2">Me interesa la <strong>ciberseguridad de forma integral</strong>, con un interés cada vez mayor en el <strong>blue team</strong>: monitoreo, análisis de redes, respuesta a incidentes y defensa de sistemas. El lado ofensivo (CTFs, pentesting) me ayuda a pensar como atacante para defender mejor. También programo, hago desarrollo web y he explorado visión por computadora e IA.</p>
+            <p data-i18n="about.p3">Fuera de la pantalla me gusta la música y los juegos de estrategia, que me ayudan a pensar de forma creativa al resolver problemas.</p>
+            <ul class="facts">
+              <li><span class="dim" data-i18n="about.edu">educación</span> UDLAP · <span data-i18n="about.grad">egreso mayo 2029</span></li>
+              <li><span class="dim" data-i18n="about.langs">idiomas</span> <span data-i18n="about.langsv">Español (nativo) · Inglés (C1) · Japonés (N5)</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section__title"><span class="ps">$</span> git log --oneline <span class="comment"># <span data-i18n="exp.title">experiencia</span></span></h2>
+        <ol class="timeline">
+          <li>
+            <span class="timeline__date"><span class="hash">e81d4a7</span> <span data-i18n="exp.d0">2026 — presente</span></span>
+            <h3 data-i18n="exp.t0">Asistente de investigación · Visión por computadora</h3>
+            <p data-i18n="exp.p0">Colaboro en un proyecto de investigación universitario (confidencial) en visión por computadora: preparación de datos, etiquetado asistido por modelos y evaluación de detectores.</p>
+          </li>
+          <li>
+            <span class="timeline__date"><span class="hash">a3f9c21</span> <span data-i18n="exp.d1">ago 2025 — presente</span></span>
+            <h3 data-i18n="exp.t1">Líder · Hackztecs UDLAP</h3>
+            <p data-i18n="exp.p1">Lidero el equipo de CTF y ciberseguridad de la universidad. Doy tutorías de seguridad en redes y blue team, y comparto conocimientos de ciberseguridad general con la comunidad universitaria.</p>
+          </li>
+          <li>
+            <span class="timeline__date"><span class="hash">1c55e90</span> <span data-i18n="exp.d3">ago 2022 — jun 2025</span></span>
+            <h3 data-i18n="exp.t3">Tutor de TI · Preparatoria</h3>
+            <p data-i18n="exp.p3">Asesoré a compañeros en fundamentos de programación y tecnologías de la información; el promedio del grupo mejoró aproximadamente un 45%.</p>
+          </li>
+        </ol>
+        <h3 class="subhead"><span class="ps">$</span> ls events/</h3>
+        <ul class="tags">
+          <li>HTB_University_CTF_2025</li>
+          <li>OffSec_The_Gauntlet</li>
+          <li>HTB_Neurogrid_CTF</li>
+          <li>IEEE_Kickoff</li>
+          <li>CECATI_TIC</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- HTB -->
+    <section id="htb" class="section">
+      <div class="container">
+        <h2 class="section__title"><span class="ps">$</span> htb --profile PePyHTB</h2>
+        <!-- Actualizar estos números a mano desde el perfil de HTB -->
+        <div class="stats">
+          <div class="stat"><span class="stat__value">31</span><span class="stat__label" data-i18n="htb.level">Nivel</span></div>
+          <div class="stat"><span class="stat__value">Skilled</span><span class="stat__label" data-i18n="htb.rank">Rango HTB</span></div>
+          <div class="stat"><span class="stat__value">12</span><span class="stat__label" data-i18n="htb.machines">Máquinas</span></div>
+          <div class="stat"><span class="stat__value">#1817</span><span class="stat__label">Season 12 · Ruby</span></div>
+        </div>
+        <p class="xp" aria-label="XP 178 de 716"><span class="dim">xp</span> [<span class="xp__bar">#####</span><span class="dim">···············</span>] 178/716</p>
+
+        <article class="feature">
+          <a class="feature__img" href="assets/img/htb-uni-ctf-2025.png" target="_blank" rel="noopener">
+            <img src="assets/img/htb-uni-ctf-2025.png" alt="Certificado HTB University CTF 2025" width="1393" height="983" loading="lazy">
+          </a>
+          <div class="feature__body">
+            <p class="eyebrow" data-i18n="htb.highlight">// logro destacado</p>
+            <h3>University CTF 2025 · Tinsel Trouble</h3>
+            <p data-i18n="htb.ctf">Con el equipo <strong>UDLAP Hackztecs</strong> quedamos en el <strong>lugar 52 de 1014 equipos</strong> universitarios de todo el mundo, resolviendo los 34 retos del evento.</p>
+            <ul class="kv">
+              <li><span>ranking</span><b>52nd / 1014</b></li>
+              <li><span data-i18n="htb.solved">retos</span><b>34 / 34</b></li>
+              <li><span data-i18n="htb.points">puntos</span><b>15,475</b></li>
+              <li><span data-i18n="htb.date">fecha</span><b data-i18n="htb.dateval">19–21 dic 2025</b></li>
+            </ul>
+            <a class="btn" href="https://profile.hackthebox.com/profile/019c961a-386e-7038-ac83-81f71e967886" target="_blank" rel="noopener" data-i18n="htb.profile">[ perfil de HTB ↗ ]</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2 class="section__title"><span class="ps">$</span> ls -l projects/ <span class="comment"># <span data-i18n="nav.projects">proyectos</span></span></h2>
+        <div class="cards">
+          <article class="card card--big">
+            <p class="eyebrow" data-i18n="proj.featured">// proyecto destacado</p>
+            <h3>hamstr-ai/</h3>
+            <p data-i18n="proj.hamstr">Entrenador académico para iOS pensado para estudiantes con problemas de atención y TDAH. Ayuda a estudiar con estructura sin dar respuestas automáticas: agenda, sesiones Pomodoro con apoyo contextual, chat con guardrails, trivia de entrenamiento mental y sistema de rachas.</p>
+            <ul class="stack"><li>swift</li><li>swiftui</li><li>spm</li><li>ios</li></ul>
+            <a class="link" href="https://github.com/PePy-Code/Hamstr-AI" target="_blank" rel="noopener" data-i18n="proj.repo">→ ver repositorio</a>
+          </article>
+          <article class="card">
+            <p class="eyebrow" data-i18n="proj.personal">// proyecto personal</p>
+            <h3>camera-realtime-test/</h3>
+            <p data-i18n="proj.camera">Prueba de conexión entre dos computadoras enviando datos de cámara en tiempo real a través de la red.</p>
+            <ul class="stack"><li data-i18n="proj.net">redes</li><li data-i18n="proj.rt">tiempo-real</li></ul>
+            <a class="link" href="https://github.com/PePy-Code/CameraRealTimeTest" target="_blank" rel="noopener" data-i18n="proj.repo">→ ver repositorio</a>
+          </article>
+          <article class="card card--wide">
+            <p class="eyebrow" data-i18n="proj.tool">// herramienta blue team · demo en vivo</p>
+            <h3>ioc-extractor/</h3>
+            <p data-i18n="proj.ioc">Extrae indicadores de compromiso (IPs, dominios, URLs, correos, hashes MD5/SHA1/SHA256, CVEs y técnicas de MITRE ATT&amp;CK) de logs, correos o reportes. Acepta indicadores "defanged" (hxxp, [.]), marca IPs privadas, exporta a JSON/CSV y funciona 100% en el navegador, sin enviar datos. Incluye pruebas automatizadas.</p>
+            <ul class="stack"><li>javascript</li><li>regex</li><li>dfir</li><li>mitre-att&amp;ck</li><li>tests</li></ul>
+            <div class="card__links">
+              <a class="link" href="tools/ioc/" data-i18n="proj.demo">→ abrir demo</a>
+              <a class="link" href="https://github.com/PePy-Code/PePy-Code.github.io/tree/main/tools/ioc" target="_blank" rel="noopener" data-i18n="proj.code">→ ver código</a>
+            </div>
+          </article>
+          <!-- Proyecto de investigación confidencial: no agregar nombre, datasets ni detalles técnicos -->
+          <article class="card card--classified">
+            <p class="eyebrow"><span class="stamp">CLASSIFIED</span> <span data-i18n="proj.research">// investigación universitaria</span></p>
+            <h3>undisclosed-cv-research/</h3>
+            <p class="dim">Undisclosed Computer Vision Investigation Project</p>
+            <p data-i18n="proj.cv">Colaboro como asistente en un proyecto de investigación de visión por computadora de mi universidad. Los detalles del proyecto son confidenciales, pero algunas de mis tareas son:</p>
+            <ul class="tasks">
+              <li data-i18n="proj.task1">Curación y unificación de datasets multimodales para detección de objetos.</li>
+              <li data-i18n="proj.task2">Pseudo-etiquetado con modelos zero-shot (open-vocabulary) y revisión manual de las anotaciones.</li>
+              <li data-i18n="proj.task3">Evaluación de modelos de detección (precisión / recall) en pruebas de viabilidad.</li>
+              <li data-i18n="proj.task4">Montaje de entornos y herramientas de visualización de datos en Linux con GPU.</li>
+              <li data-i18n="proj.task5">Exportación a formatos estándar (YOLO, COCO) y notebooks de demostración.</li>
+            </ul>
+            <p class="redacted" aria-hidden="true"><span style="width:38%"></span><span style="width:22%"></span><span style="width:30%"></span><span style="width:50%"></span><span style="width:18%"></span></p>
+            <ul class="stack"><li>computer-vision</li><li>python</li><li>pytorch</li><li>object-detection</li><li data-i18n="proj.res">investigación</li></ul>
+            <button type="button" class="link--locked" id="locked-btn" data-i18n="proj.locked">⊘ acceso restringido</button>
+            <p class="denied" id="denied" role="status" aria-live="polite"></p>
+          </article>
+        </div>
+
+        <h3 class="subhead"><span class="ps">$</span> ls school/ <span class="comment"># <span data-i18n="proj.academic">proyectos académicos</span></span></h3>
+        <div class="cards cards--small">
+          <article class="card">
+            <h4 data-i18n="proj.bank.t">bank-system.cpp</h4>
+            <p data-i18n="proj.bank">Gestión de cuentas y transacciones aplicando POO (clases, herencia).</p>
+            <ul class="stack"><li>c++</li></ul>
+          </article>
+          <article class="card">
+            <h4 data-i18n="proj.pet.t">pet-simulator.cpp</h4>
+            <p data-i18n="proj.pet">Juego donde eliges una de tres mascotas y la cuidas; lógica con diseño orientado a objetos.</p>
+            <ul class="stack"><li>c++</li></ul>
+          </article>
+          <article class="card">
+            <h4 data-i18n="proj.sql.t">store-inventory.sql</h4>
+            <p data-i18n="proj.sql">Base de datos para productos y ventas: altas, bajas y valor del inventario.</p>
+            <ul class="stack"><li>sql-server</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTS: listado tipo `ls -la` -->
+    <section id="certs" class="section">
+      <div class="container">
+        <h2 class="section__title"><span class="ps">$</span> ls -la ~/certs <span class="comment"># <span data-i18n="nav.certs">certificaciones</span></span></h2>
+        <div class="ls" role="list">
+          <p class="ls__total dim">total 5</p>
+          <a class="ls__row" role="listitem" href="assets/certs/isc2-cc-course-completion.pdf" target="_blank" rel="noopener">
+            <span class="ls__perm">-r--r--r--</span><span class="ls__owner">isc2</span><span class="ls__date">2026-11-08</span>
+            <span class="ls__name">ISC2 CC — Official Course Completion <span class="dim" data-i18n="cert.isc2.d">· curso oficial + evaluación final</span><span class="ls__new">new</span></span>
+          </a>
+          <a class="ls__row" role="listitem" href="assets/certs/cisco-intro-ciberseguridad.pdf" target="_blank" rel="noopener">
+            <span class="ls__perm">-r--r--r--</span><span class="ls__owner">cisco</span><span class="ls__date">2026-10-06</span>
+            <span class="ls__name" data-i18n="cert.cisco">Introducción a la Ciberseguridad</span>
+          </a>
+          <a class="ls__row" role="listitem" href="assets/certs/opencv-bootcamp.pdf" target="_blank" rel="noopener">
+            <span class="ls__perm">-r--r--r--</span><span class="ls__owner">opencv</span><span class="ls__date">2026-11-07</span>
+            <span class="ls__name">OpenCV Bootcamp <span class="dim">· 90%</span></span>
+          </a>
+          <a class="ls__row" role="listitem" href="assets/certs/pytorch-bootcamp.pdf" target="_blank" rel="noopener">
+            <span class="ls__perm">-r--r--r--</span><span class="ls__owner">opencv</span><span class="ls__date">2026-03-21</span>
+            <span class="ls__name">PyTorch Bootcamp <span class="dim">· 95%</span></span>
+          </a>
+          <a class="ls__row" role="listitem" href="assets/certs/htb-university-ctf-2025.pdf" target="_blank" rel="noopener">
+            <span class="ls__perm">-r--r--r--</span><span class="ls__owner">htb</span><span class="ls__date">2025-12-21</span>
+            <span class="ls__name">University CTF 2025 <span class="dim" data-i18n="cert.htb.d">· participación</span></span>
+          </a>
+        </div>
+        <p class="hint dim" data-i18n="cert.hint">// clic en cualquier línea para abrir el PDF</p>
+      </div>
+    </section>
+
+    <!-- SKILLS (borrador: se definirá después) -->
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section__title"><span class="ps">$</span> whoami --skills</h2>
+<h3 class="subhead"><span class="ps">$</span> cat langs.txt <span class="comment"># <span data-i18n="sk.code">programación</span></span></h3>
+        <ul class="langs">
+          <li><b>swift</b><span data-i18n="lang.swift">App iOS completa (Hamstr AI) con SwiftUI y Swift Package Manager: agenda, Pomodoro, chat y sistema de rachas.</span></li>
+          <li><b>python</b><span data-i18n="lang.python">Investigación en visión por computadora: procesamiento de datasets, modelos de detección con PyTorch y notebooks. Bootcamps de PyTorch (95%) y OpenCV (90%).</span></li>
+          <li><b>c++</b><span data-i18n="lang.cpp">Programación orientada a objetos (clases, herencia) en proyectos académicos y resolución de problemas algorítmicos.</span></li>
+          <li><b>sql</b><span data-i18n="lang.sql">Diseño y consultas de una base de datos de inventario en SQL Server.</span></li>
+          <li><b>html/css/js</b><span data-i18n="lang.web">Este portafolio: hecho a mano, sin frameworks, bilingüe y accesible.</span></li>
+          <li><b>bash/linux</b><span data-i18n="lang.sh">Uso diario de Arch Linux, scripting y herramientas de terminal para CTFs y laboratorios.</span></li>
+        </ul>
+
+        <h3 class="subhead"><span class="ps">$</span> tree skills/</h3>
+<pre class="tree">skills/
+├── <b data-i18n="sk.sec">ciberseguridad</b>/
+│   ├── blue-team
+│   ├── <span data-i18n="sk.ir">respuesta-a-incidentes</span>
+│   ├── <span data-i18n="sk.net">análisis-de-redes</span>
+│   ├── pentesting
+│   ├── <span data-i18n="sk.crypto">criptografía</span>
+│   └── ctf
+├── <b data-i18n="sk.sys">sistemas</b>/
+│   ├── linux
+│   └── kali-linux
+├── <b data-i18n="sk.prog">programación</b>/
+│   ├── swift
+│   ├── python
+│   ├── c++
+│   ├── sql
+│   └── visual-basic
+├── <b>ai-cv</b>/
+│   ├── pytorch
+│   └── opencv
+└── <b>web</b>/
+    ├── html
+    ├── css
+    └── javascript
+
+<span class="dim">5 directories, 18 files</span></pre>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container contact">
+        <h2 class="section__title"><span class="ps">$</span> ./contact.sh</h2>
+        <p data-i18n="contact.p">¿Buscas a alguien para un equipo de CTF, una pasantía o un proyecto? Escríbeme.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="mailto:SaulBastidas064@outlook.com?subject=Contacto%20desde%20tu%20portafolio">[ email ]</a>
+          <button type="button" class="btn" id="copy-email" data-email="SaulBastidas064@outlook.com" data-i18n="contact.copy">[ copiar email ]</button>
+          <a class="btn" href="https://www.linkedin.com/in/saul-bastidas" target="_blank" rel="noopener">[ linkedin ]</a>
+          <a class="btn" href="https://github.com/PePy-Code" target="_blank" rel="noopener">[ github ]</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p><span class="dim">[process exited with code 0]</span> · © <span id="year">2026</span> Saúl Bastidas · <span data-i18n="footer">hecho a mano con HTML, CSS y JS</span></p>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/boot.js"></script>
+  <script src="js/palette.js"></script>
+  <script src="js/statusbar.js"></script>
+  <script src="js/fx.js"></script>
+</body>
+</html>

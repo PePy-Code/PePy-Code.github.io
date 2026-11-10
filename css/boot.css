@@ -1,0 +1,162 @@
+/* Terminal boot intro — monochrome only. Every rule is scoped under #boot. */
+
+#boot {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(18px, 6vw, 56px);
+  background: #0a0a0a;
+  color: #8a8a8a;
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: clamp(12px, 2.6vw, 16px);
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.38s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle CRT scanlines, painted only over the overlay. */
+#boot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(245, 245, 245, 0.028) 0,
+    rgba(245, 245, 245, 0.028) 1px,
+    transparent 1px,
+    transparent 4px
+  );
+  opacity: 0.55;
+}
+
+/* Soft vignette so the center reads like a CRT. */
+#boot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 55%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+}
+
+#boot.boot--out {
+  opacity: 0;
+}
+
+#boot .boot__screen {
+  position: relative;
+  z-index: 1;
+  width: min(660px, 100%);
+}
+
+#boot .boot__log {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3em;
+  min-height: 9em;
+}
+
+#boot .boot__line {
+  margin: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  animation: boot-line-in 0.12s ease-out both;
+}
+
+#boot .boot__ok {
+  color: #f5f5f5;
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(245, 245, 245, 0.16);
+}
+
+#boot .boot__msg {
+  color: #8a8a8a;
+}
+
+/* Blinking block cursor sits at the end of the line being "typed". */
+#boot .boot__line.is-active .boot__msg::after {
+  content: "";
+  display: inline-block;
+  width: 0.55em;
+  height: 1em;
+  margin-left: 0.15em;
+  vertical-align: -0.15em;
+  background: #f5f5f5;
+  animation: boot-blink 1s steps(1) infinite;
+}
+
+#boot .boot__banner {
+  margin: 0.9em 0 0;
+  padding: 0;
+  color: #f5f5f5;
+  font-family: inherit;
+  font-size: 0.7em;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0;
+  white-space: pre;
+  opacity: 0;
+  text-shadow: 0 0 8px rgba(245, 245, 245, 0.16);
+  transition: opacity 0.25s ease;
+}
+
+#boot .boot__banner.is-visible {
+  opacity: 1;
+}
+
+@keyframes boot-line-in {
+  from {
+    opacity: 0;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes boot-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Very small screens: drop the banner, let lines wrap freely. */
+@media (max-width: 419px) {
+  #boot .boot__banner {
+    display: none;
+  }
+
+  #boot .boot__log {
+    min-height: 0;
+  }
+
+  #boot .boot__screen {
+    width: 100%;
+  }
+}
+
+/* Users who disable motion never see this overlay (JS also checks), but keep
+   the styles quiet in case it is rendered some other way. */
+@media (prefers-reduced-motion: reduce) {
+  #boot {
+    transition: none;
+  }
+
+  #boot .boot__line,
+  #boot .boot__line.is-active .boot__msg::after {
+    animation: none;
+  }
+}
