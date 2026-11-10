@@ -1,6 +1,6 @@
 # pepy-code.github.io
 
-Portafolio personal de **Saúl Bastidas (PePy)** — ciberseguridad, CTFs y desarrollo web.
+Portafolio personal — ciberseguridad, CTFs y desarrollo web.
 
 Sitio estático (HTML/CSS/JS, sin build) publicado con GitHub Pages en https://pepy-code.github.io
 
